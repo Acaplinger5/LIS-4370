@@ -1,0 +1,24 @@
+# Data
+Freq <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2)
+bloodp <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+first <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)
+second <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)
+finaldecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+
+#Create data frame
+BP <- data.frame(Freq, bloodp, first, second, finaldecision)
+
+#Create first box plot
+boxplot(bloodp ~ first, data = BP, main = "BP by First Assessment", xlab = "First Assessment (1 = bad, 0 = good)", ylab = "Blood Pressure")
+
+#Create second box plot
+boxplot(bloodp ~ second, data = BP, main = "BP by Second Assessment", xlab = "Second Assessment (1 = high, 0 = low)", ylab = "Blood Pressure")
+
+#Create final box plot
+boxplot(bloodp ~ finaldecision, data = BP, main = "BP by Final Assessment", xlab = "Final Assessment (1 = high, 0 = low)", ylab = "Blood Pressure")
+
+#Create historgram for frequency 
+hist(Freq, main = "Histogram of Frequency of Visits")
+
+#Create historgram for blood pressure
+hist(bloodp, main = "Histogram of Blood Pressure")
