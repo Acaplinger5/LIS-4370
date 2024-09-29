@@ -1,0 +1,17 @@
+#Find the value of inverse matrix, determinant of a matrix by using the follow values 
+
+A <- matrix(1:100, nrow = 10)
+
+B <- matrix(1:1000, nrow = 10)
+
+# Inverse of each matrix
+
+solve(A)
+
+solve(B)
+
+# Determinant of each matrix 
+
+det(A)
+
+det(B)
