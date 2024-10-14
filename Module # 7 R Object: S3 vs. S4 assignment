@@ -1,0 +1,36 @@
+#Download Data or use Dataset from R
+data("InsectSprays")
+
+#Determine if Generic Function can be assinged to Data Set
+head(InsectSprays, 6)
+list(InsectSprays, 6)
+str(InsectSprays)
+
+#Explore if S3 and S4 can be applied to dataset
+#S3
+class(InsectSprays)
+
+#S4
+isS4(InsectSprays)
+
+#Determine base type
+typeof(InsectSprays)
+
+#Create two examples of S3 and S4
+#First Example 
+s3 <- list(name = "Alicia ", age = 31, GPA = 3.8)
+s3
+
+setClass("student", 
+         slots = c(name = "character", age = "numeric", GPA = "numeric"))
+s4 <- new("student",name="Alicia", age=31, GPA=3.8)
+s4
+
+#Second Example
+s3 <- list(name = "Alicia", height = 62, weight = 136)
+s3
+
+setClass("patient", 
+         slots = c(name = "character", age = "numeric", GPA = "numeric"))
+s4 <- new("patient",name="Alicia", age=62, GPA=136)
+s4
