@@ -1,0 +1,22 @@
+# Load required packages
+install.packages("plyr")
+library(plyr)
+
+
+#import dataset into R 
+students <- read.table("C://Users//capli//OneDrive//Desktop//USF//LIS 4370 R Programming//Assignment 6 Dataset.txt", header = TRUE, sep = ",")
+students
+
+#Get average of age and grade spilt by gender
+studentsaverage <- ddply(students, "Sex", transform, Grade.Average = mean(Grade))
+studentsaverage
+
+#write to table 
+write.table(studentsaverage, "Sorted_Average.csv", sep = ",")
+
+#test for names with only "i"
+new = subset(students, grepl("[iI]", students$Name))
+new
+
+#write subset to a file
+write.table(new, "DataSubset.csv", sep = ",")
