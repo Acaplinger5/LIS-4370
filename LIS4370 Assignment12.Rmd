@@ -61,14 +61,13 @@ soccer_data <- soccer_data %>%
 
 Not all visuals listed below, all will be in final 
 
-```{r, Step 4}
+```{r, Step 5}
 # Write code here
 ggplot(club_stats, aes(x = reorder(Club, -Shot_Accuracy), y = Shot_Accuracy)) +
   geom_bar(stat = "identity", fill = "steelblue") +
   coord_flip() +
   labs(title = "Shot Accuracy per Club", x = "Club", y = "Shot Accuracy (%)")
 
-# Goals per match per player
 ggplot(soccer_data, aes(x = reorder(Player, -Goals_per_Match), y = Goals_per_Match)) +
   geom_bar(stat = "identity", fill = "darkgreen") +
   coord_flip() +
